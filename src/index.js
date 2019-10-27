@@ -2,18 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 class App extends React.Component{
+    // constructor function is also used to initialize our state object
     // super is a reference to the parents constructor function
     constructor(props){
         super(props);
+
+        this.state ={lat: 334.3, err: ""};
+
+        window.navigator.geolocation.getCurrentPosition(
+            position => {
+                // to update the state object, we called setState function
+            this.setState({lat: position.coords.latitude});
+            }
+    
+        )
     }
     // Always call the render function whenever we want to show JSX on the root document
     render (){
-        window.navigator.geolocation.getCurrentPosition(
-            (position) => console.log(position),
-            (err) => console.log(err)
-    
-        )
-        return <h1>Latitude: </h1>
+        return <h1>Latitude: {this.state.lat} </h1>
     }
 }
 
