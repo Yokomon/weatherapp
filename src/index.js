@@ -11,16 +11,24 @@ class App extends React.Component{
             err => this.setState({errMessage: err.message})
         )
     }
+
+    renderContent(){
+        if(this.state.lat && !this.state.errMessage){
+            return <SeasonDisplay lat = {this.state.lat} />
+            
+        }
+        if(!this.state.lat && this.state.errMessage){
+            return <h2>Error: {this.state.errMessage}</h2>
+        }
+        return <PreLoader msg = "Please allow location access" />
+    }
     // Always call the render function whenever we want to show JSX on the root document
     render (){
-    if(this.state.lat && !this.state.errMessage){
-        return <SeasonDisplay lat = {this.state.lat} />
-        
-    }
-    if(!this.state.lat && this.state.errMessage){
-        return <h2>Error: {this.state.errMessage}</h2>
-    }
-    return <PreLoader msg = "Please allow location access" />
+        return (
+            <div>
+                {this.renderContent()}
+            </div>
+        )
     }
 }
 
