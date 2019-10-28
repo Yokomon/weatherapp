@@ -11,7 +11,16 @@
 
 .season-display.winter i{
     color: blue;
+    animation: spin 8s linear infinite;
 }
+@keyframes spin-animation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 .season-display.summer i {
     color: red;
 }

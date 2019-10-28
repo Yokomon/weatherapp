@@ -24,8 +24,7 @@ class App extends React.Component{
     }
     // Always call the render function whenever we want to show JSX on the root document
     render (){
-        return (
-            <div>
+        return (<div>            
                 {this.renderContent()}
             </div>
         )
