@@ -22,14 +22,14 @@ class App extends React.Component{
     }
     // Always call the render function whenever we want to show JSX on the root document
     render (){
-        return (
-            <div>
-                  <h1>Latitude: {this.state.lat} </h1>
-            <br/>
-            <h3>Error: {this.state.errMessage}</h3>
-            </div>
-          
-            )
+    if(this.state.lat && !this.state.errMessage){
+        return <h1>Latitude: {this.state.lat}</h1>
+        
+    }
+    if(!this.state.lat && this.state.errMessage){
+        return <h2>Error: {this.state.errMessage}</h2>
+    }
+    return <h1>Loading...</h1>
     }
 }
 
