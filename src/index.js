@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import SeasonDisplay from './SeasonDisplay'
 class App extends React.Component{
     state = {lat: null, errMessage: ""};
-    
+
     componentDidMount(){
         window.navigator.geolocation.getCurrentPosition(
             position => this.setState({lat: position.coords.latitude}),
@@ -13,7 +13,7 @@ class App extends React.Component{
     // Always call the render function whenever we want to show JSX on the root document
     render (){
     if(this.state.lat && !this.state.errMessage){
-        return <h1>Latitude: {this.state.lat}</h1>
+        return <SeasonDisplay lat = {this.state.lat}/>
         
     }
     if(!this.state.lat && this.state.errMessage){

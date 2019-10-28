@@ -1,6 +1,7 @@
 import React from 'react';
 
-const SeasonDiplay = () => {
+const SeasonDiplay = props => {
+    console.log(props.lat)
     return <h1>SeasonDiplay</h1>
 }
 
