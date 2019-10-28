@@ -13,7 +13,7 @@ class App extends React.Component{
     // Always call the render function whenever we want to show JSX on the root document
     render (){
     if(this.state.lat && !this.state.errMessage){
-        return <SeasonDisplay lat = {this.state.lat}/>
+        return <SeasonDisplay lat = {this.state.lat} />
         
     }
     if(!this.state.lat && this.state.errMessage){
