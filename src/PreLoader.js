@@ -10,4 +10,7 @@ const PreLoader = props =>{
     )
 }
 
+PreLoader.defaultProps = {
+    msg: "Loading..."
+}
 export default PreLoader;

@@ -20,7 +20,7 @@ class App extends React.Component{
     if(!this.state.lat && this.state.errMessage){
         return <h2>Error: {this.state.errMessage}</h2>
     }
-    return <PreLoader msg = "Please allow location access"/>
+    return <PreLoader msg = "Please allow location access" />
     }
 }
 
