@@ -6,7 +6,7 @@ const seasonConfig = {
         iconName:  'sun'
     },
     winter : {
-        text: "It's gonna rain today, go out with an umbrella",
+        text: "It's gonna rain today.",
         iconName: 'snowflake'
     }
 }
@@ -25,7 +25,7 @@ const SeasonDiplay = props => {
     return (
     <div className={`season-display ${season}`}>
         <i className = {`left-icon massive ${iconName} icon`} />
-        <h1>{text}</h1> 
+        <h3>{text}</h3> 
         <i className = {`right-icon massive ${iconName} icon`} />
     </div>)
 }

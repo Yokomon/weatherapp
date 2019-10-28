@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PreLoader from "./PreLoader"
 import SeasonDisplay from './SeasonDisplay'
 class App extends React.Component{
     state = {lat: null, errMessage: ""};
@@ -19,7 +20,7 @@ class App extends React.Component{
     if(!this.state.lat && this.state.errMessage){
         return <h2>Error: {this.state.errMessage}</h2>
     }
-    return <h1>Loading...</h1>
+    return <PreLoader msg = "Please allow location access"/>
     }
 }
 
